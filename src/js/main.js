@@ -39,7 +39,7 @@ $(function () {
   const today = new Date();
   const eventDate = new Date("2020/08/09");
   const daysToGo = DifferenceInDays(today, eventDate);
-  // const button = $(".create-dp");
+  const button = $(".create-dp");
   const fileInput = $("input[type=file]");
   const preview = $("img");
   const changebtn = $(".change");
@@ -76,7 +76,7 @@ $(function () {
     });
     $(".hidden-image-data").val(imageData);
 
-    // button.attr("disabled", "disabled").html("...processing");
+    button.attr("disabled", "disabled").html("...processing");
 
     // x, y, width, height
     const picData = [532, 590, 776, 664];

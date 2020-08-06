@@ -154,6 +154,7 @@ main {
   width: 35%;
   right: 5%;
   min-height: 65%;
+  overflow: auto;
   align-items: center;
   background-color: white;
   border-radius: 8px;
@@ -414,7 +415,6 @@ button[type="submit"]:hover {
   padding: 5px;
 }
 
-
 .delete {
   background: red;
   border-color: red;
@@ -605,7 +605,7 @@ button[type="submit"] {
     width: 80%;
   }
 
-  .hidden{
+  .hidden {
     display: none;
   }
   .under,
@@ -652,7 +652,11 @@ button[type="submit"] {
   .author-cont ul li a {
     text-align: center;
   }
-
+  .cropit-preview {
+    width: 260px;
+    height: 214px;
+    margin-left: 5%;
+  }
   .arrow-back {
     top: 16px;
     left: 3%;
