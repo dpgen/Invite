@@ -43,7 +43,6 @@ $(function () {
   const fileInput = $("input[type=file]");
   const preview = $("img");
   const changebtn = $(".change");
-  const deletebtn = $(".delete");
   const fileInpbtn = $(".fileinput-button");
   const main = $("main");
   const mainContent = main.innerHTML;
@@ -96,37 +95,11 @@ $(function () {
             <div class="img-dp">
               <img id="dp_result" src=${url} title="Your DP"/>
               <br>
-              <a id="asd" class="download-dp">Download Image</a>
+              <a class="download-dp" href="${url}" download="INVITE_${username.replace(/\./g, "")}">Download Image</a>
               <br>
             </div>
             
-              <p class="share">Don't forget to share the good news</p>
-            
-           <!-- <div class="social-media-handles">
-              <div>
-                <a href="www.facebook.com"><p>Facebook</p></a>
-              </div>
-              <div>
-                <a href="www.instagram.com"><p>Instagram</p></a>
-              </div>
-              <div>
-                <a href="www.twitter.com"><p>Twitter</p></a>
-              </div>
-            </div> -->
-            <script>
-              document.getElementById('asd').onclick = function name() {
-                downloadImage("${url}", "BECON_DP_${username.replace(/\./g, "")}");
-              }
-              function downloadImage(inUrl, inName) {
-                console.log("reached");
-               var w = window.open("");
-               var link = w.document.createElement("a");
-               link.download = inName;
-               link.href = inUrl;
-               link.click();
-               location.replace("https://egfm.org/becon")
-              }
-            </script>
+            <p class="share">Don't forget to share the good news</p>
           </section>
         `;
       }
@@ -136,7 +109,6 @@ $(function () {
   fileInput.on("change", function (e) {
     fileInpbtn.css({ display: "none" });
     changebtn.css({ display: "inline-block" });
-    deletebtn.css({ display: "inline-block" });
   });
 
   /* change image btn */
@@ -145,16 +117,16 @@ $(function () {
   });
 
   /* remove image btn */
-  deletebtn.on("click", function () {
-    let file = document.querySelector("input[type=file]").files[0];
-    file.value = null;
+  // deletebtn.on("click", function () {
+  //   let file = document.querySelector("input[type=file]").files[0];
+  //   file.value = null;
 
-    fileInpbtn.css({ display: "inline-block" });
-    changebtn.css({ display: "none" });
-    deletebtn.css({ display: "none" });
+  //   fileInpbtn.css({ display: "inline-block" });
+  //   changebtn.css({ display: "none" });
+  //   deletebtn.css({ display: "none" });
 
-    $(".cropit-preview-image").attr("src", "");
-  });
+  //   $(".cropit-preview-image").attr("src", "");
+  // });
 
   function b64toBlob(b64Data, contentType, sliceSize) {
     contentType = contentType || "";
